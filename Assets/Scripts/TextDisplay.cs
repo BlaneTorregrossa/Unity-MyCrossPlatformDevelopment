@@ -2,15 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextDisplay : MonoBehaviour {
+public class TextDisplay : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public GenerateGraph generateGraph;
+    public GameObject textObject;
+    public GameObject RoomInfo;
+
+
+
+    void displayRoom()
+    {
+        textObject.GetComponent<TextMesh>().text = "Player Current position is: " + generateGraph.PlayerVec.ToString();
+    }
+
+    // Needs Work
+    void displayInfo()
+    {
+        RoomInfo.GetComponent<TextMesh>().text = "Information about the current room"; 
+    }
+
+	void Start ()
+    {
+        displayRoom();
+        displayInfo();
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        displayRoom();
 	}
 }
